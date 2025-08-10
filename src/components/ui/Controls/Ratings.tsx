@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { Rate } from "antd";
 
-export default function MyRating() {
-  const [value, setValue] = useState(3);
+interface RatingProps {
+  value?: number;
+  onChange?: (value: number) => void;
+  disabled?: boolean;
+}
+export default function MyRating(props: RatingProps) {
+  const [value, setValue] = useState(props.value || 2);
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <Rate value={value} onChange={setValue} />
+      <Rate className="text-primary text-sm" disabled={props.disabled} value={value} onChange={setValue} />
     </div>
   );
 }

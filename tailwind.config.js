@@ -21,7 +21,9 @@ export default {
         error:"#EA4335",
         warning:"#F9AB00",
         text:"#212121",
-        sectext:"#424242"
+        sectext:"#424242",
+        border:"#E0E0E0",
+        cards:"#F5F5F5"
       },
     },
   },
