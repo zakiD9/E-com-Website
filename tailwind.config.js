@@ -7,14 +7,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
-        primary: "#1E40AF",
-        secondary: "#F59E0B",
+        primary: "#1A73E8",
+        secondary: "#FF6B00",
         accent: "#10B981",
         dark: "#111827",
         light: "#F3F4F6",
+        prhover:"#1669C1",
+        sechover:"#E65E00E2",
+        success:"#34A853",
+        error:"#EA4335",
+        warning:"#F9AB00",
+        text:"#212121",
+        sectext:"#424242"
       },
     },
   },
