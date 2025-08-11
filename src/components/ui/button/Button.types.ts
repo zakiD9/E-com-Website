@@ -11,4 +11,5 @@ export interface ButtonProps {
   isPill?: boolean;
   isLoading?: boolean;
   loadingText?: string;
+  iconPosition?:string;
 }
