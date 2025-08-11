@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { EyeIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
-import MyRating from "../../../ui/Controls/Ratings";
-import { IconButton } from "../../../ui/button/IconButton";
-import { Button } from "../../../ui/button/Button";
+import MyRating from "../../../../ui/Controls/Ratings";
+import { IconButton } from "../../../../ui/button/IconButton";
+import { Button } from "../../../../ui/button/Button";
 import WishlistButton from "../AddToWishList";
 
 interface ProductCardProps {

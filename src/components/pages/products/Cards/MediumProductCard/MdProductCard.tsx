@@ -1,5 +1,5 @@
-import { IconButton } from "../../../ui/button/IconButton";
-import MyRating from "../../../ui/Controls/Ratings";
+import { IconButton } from "../../../../ui/button/IconButton";
+import MyRating from "../../../../ui/Controls/Ratings";
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import WishlistButton from "../AddToWishList";
 
