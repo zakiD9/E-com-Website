@@ -1,12 +1,18 @@
-import Footer from "../components/layout/Footer";
-import CustomerReview from "../components/pages/products/Reviews/CustomerReview";
-import StarRating from "../components/pages/products/Reviews/RatingsDetails/RatingsDetails";
-
+import Container from "../components/layout/Container"
+import Navbar from "../components/layout/navbar/NavBar";
+import BestDeals from "../components/pages/home/BestDealsComponent";
+import LandingComponent from "../components/pages/home/LandingComponent";
+import ServicesSection from "../components/pages/home/ServicesComponent";
 
 export default function Home(){
     return(
-    <div className="flex flex-col items-center justify-center min-h-screen bg-secondary ">
-    <StarRating />
-    </div>
+        <>
+        <Navbar />
+    <Container>
+        <LandingComponent />
+        <ServicesSection />
+        <BestDeals />
+    </Container>
+        </>
 );
 }

@@ -17,9 +17,9 @@ interface MdProductCardProps {
 export default function MdProductCard(props:MdProductCardProps){
 
     return(
-        <div className="flex w-64 flex-col border border-border rounded-md bg-cards cursor-pointer transition-colors duration-300 ease-in-out hover:bg-border">
+        <div className="flex flex-col border w-[203px] h-[247px] border-border rounded-md bg-cards cursor-pointer transition-colors duration-300 ease-in-out hover:bg-border">
             <div className="relative">
-                <img src={props.productImage} alt={props.productName} className="w-full h-48 object-cover rounded-t-md" />
+                <img src={props.productImage} alt={props.productName} className="w-full h-[154px] object-cover rounded-t-md" />
                 <div className="absolute top-2 right-2">
           <WishlistButton
             initialState={false}
@@ -31,13 +31,13 @@ export default function MdProductCard(props:MdProductCardProps){
         </div>
         </div>
             
-            <div className="flex flex-col p-2 gap-1 justify-between">
+            <div className="flex flex-col p-2  h-[93px] justify-between">
                 <div className="flex flex-1  justify-between items-start">
-                    <h3 className="break-words whitespace-normal  max-w-[150px]">{props.productName}</h3>
-                    <IconButton variant="primary" icon={<ShoppingCartIcon />} />
+                    <h3 className="truncate text-sm max-w-[150px]">{props.productName}</h3>
+                    <IconButton variant="primary" icon={<ShoppingCartIcon className="w-4 h-4" />}/>
                 </div>
                 <div className="flex gap-2 items-center">
-                    <h1 className="text-lg">${props.DiscountProductPrice }</h1>
+                    <h1 className="text-md">${props.DiscountProductPrice }</h1>
                     <p className="line-through text-[12px] text-gray-500">${props.productPrice}</p>
                 </div>
                 <div className="flex gap-3 text-sm text-gray-500">
