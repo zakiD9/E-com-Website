@@ -87,17 +87,17 @@ const product = {
 
 
 
-export default function BestDeals(){
+
+export default function FeaturedProducts(){
 
     return(
         <div className="my-10 flex flex-col gap-2">
             <div className="flex justify-between items-center">
-            <h1>Best Deals</h1>
+            <h1>Featured Products</h1>
             <p>View All Products</p>
             </div>
-            <div className="flex gap-3">
-            <LargeProductCard description={product.description} price={product.price} name={product.name} productImage={product.productImage} rating={product.rating} reviewsCount={product.reviewsCount} oldPrice={product.oldPrice} />
-            <div className="grid grid-cols-4 grid-rows-2 gap-x-10 gap-y-2">
+            <div className="flex gap-12">
+            <div className="grid grid-cols-4 grid-rows-2 gap-x-12 gap-y-2">
                 {products.map((product)=>{return <MdProductCard key={product.productId} productId={product.productId}
   productImage={product.productImage}
   productName={product.productName}
@@ -106,6 +106,7 @@ export default function BestDeals(){
   productRating={product.productRating}
   productReviews={product.productReviews} />})}
             </div>
+            <LargeProductCard description={product.description} price={product.price} name={product.name} productImage={product.productImage} rating={product.rating} reviewsCount={product.reviewsCount} oldPrice={product.oldPrice} />
             </div>
         </div>
     )

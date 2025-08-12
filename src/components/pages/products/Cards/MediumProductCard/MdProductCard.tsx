@@ -17,7 +17,7 @@ interface MdProductCardProps {
 export default function MdProductCard(props:MdProductCardProps){
 
     return(
-        <div className="flex flex-col border w-[203px] h-[247px] border-border rounded-md bg-cards cursor-pointer transition-colors duration-300 ease-in-out hover:bg-border">
+        <div className="flex flex-col border w-[203px] h-[247px] border-border rounded-md bg-white cursor-pointer transition-colors duration-300 ease-in-out hover:bg-cards">
             <div className="relative">
                 <img src={props.productImage} alt={props.productName} className="w-full h-[154px] object-cover rounded-t-md" />
                 <div className="absolute top-2 right-2">
