@@ -7,7 +7,7 @@ interface RatingProps {
   disabled?: boolean;
 }
 export default function MyRating(props: RatingProps) {
-  const [value, setValue] = useState(props.value || 2);
+  const [value, setValue] = useState(props.value || 0);
 
   return (
     <div className="flex flex-col items-center gap-2">

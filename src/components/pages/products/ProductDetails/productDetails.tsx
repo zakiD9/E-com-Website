@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import MyRating from "../../../../ui/Controls/Ratings";
-import WishlistButton from "../AddToWishList";
-import CustomDropdown from "../../../../ui/dropdown/Dropdown";
-import { Button } from "../../../../ui/button/Button";
-import QuantityButton from "../../../../ui/Controls/QuantityCount";
+import MyRating from "../../../ui/Controls/Ratings";
+import WishlistButton from "../Cards/AddToWishList";
+import CustomDropdown from "../../../ui/dropdown/Dropdown";
+import { Button } from "../../../ui/button/Button";
+import QuantityButton from "../../../ui/Controls/QuantityCount";
 
 export interface ProductImage {
   src: string;

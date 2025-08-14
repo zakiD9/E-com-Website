@@ -2,7 +2,7 @@ import React from "react";
 import { Collapse, Rate } from "antd";
 import type { CollapseProps } from "antd";
 import { CheckCircleOutlined } from "@ant-design/icons";
-import ReviewsSection from "../../Reviews/ReviewsSection";
+import ReviewsSection from "../Reviews/ReviewsSection";
 
 const { Panel } = Collapse;
 

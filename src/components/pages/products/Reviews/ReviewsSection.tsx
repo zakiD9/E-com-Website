@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CustomerReview from "./CustomerReview";
 import RatingsDetails from "./RatingsDetails/RatingsDetails";
+import MakeReviewModal from "./MakingReview";
 
 const reviews = [
   {
@@ -39,6 +40,11 @@ const reviews = [
       "Looks exactly like the pictures. A little heavier than expected but feels durable. Packaging could be better.",
   },
 ];
+const reviewprod = {
+    productName: "Wireless Headphones",
+    productDescription: "High-quality over-ear headphones with noise cancellation.",
+    productImage: "https://images.unsplash.com/photo-1580894908361-6a1f0f847b2b?auto=format&fit=crop&w=400&q=80",
+  }
 
 
 export default function ReviewsSection(){
@@ -47,7 +53,11 @@ export default function ReviewsSection(){
 
     return(
         <div className="flex gap-4">
+            <div>
+            <MakeReviewModal productDescription={reviewprod.productDescription} productImage={reviewprod.productImage} productName={reviewprod.productName} />
             <RatingsDetails />
+            </div>
+            
             <div className="flex flex-col">
                 {displayedReviews.map((review)=>(<CustomerReview {...review}/>))}
                 {reviews.length > 3 && (
