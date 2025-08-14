@@ -1,3 +1,4 @@
+import React from "react";
 import LargeProductCard from "../products/Cards/LargeProductCard/LargeProductCard"
 import MdProductCard from "../products/Cards/MediumProductCard/MdProductCard";
 
@@ -88,7 +89,7 @@ const product = {
 
 
 
-export default function FeaturedProducts(){
+function FeaturedProducts(){
 
     return(
         <div className="my-10 flex flex-col gap-2">
@@ -111,3 +112,5 @@ export default function FeaturedProducts(){
         </div>
     )
 }
+
+export default React.memo(FeaturedProducts);

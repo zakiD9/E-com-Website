@@ -1,4 +1,4 @@
-import SearchBar from "../../ui/search/SearchInput";
+import SearchBar from "../../ui/search/NavbarSearchInput";
 import {
   ShoppingCartOutlined,
   HeartOutlined,

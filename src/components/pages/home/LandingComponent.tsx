@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import HeroSlider from "../../ui/Carousel";
 
 interface LandingComponentprops{
@@ -7,6 +7,7 @@ interface LandingComponentprops{
     thirdImageList:string[];
 }
 
+const MemoHeroSlider = memo(HeroSlider);
 
 export default function LandingComponent({
   slider1= [
@@ -40,10 +41,10 @@ export default function LandingComponent({
   }, []);
     return(
         <div className="flex p-2 my-4 gap-5">
-            <HeroSlider activeIndex={activeIndex}  images={slider1} className="w-[873px] h-[520px]"/>
+            <MemoHeroSlider activeIndex={activeIndex}  images={slider1} className="w-[873px] h-[520px]"/>
             <div className="flex flex-col gap-5">
-            <HeroSlider activeIndex={activeIndex} images={slider2} className="w-[427px] h-[250px]"/>
-            <HeroSlider activeIndex={activeIndex} images={slider3} className="w-[427px] h-[250px]"/>
+            <MemoHeroSlider activeIndex={activeIndex} images={slider2} className="w-[427px] h-[250px]"/>
+            <MemoHeroSlider activeIndex={activeIndex} images={slider3} className="w-[427px] h-[250px]"/>
             </div>
         </div>
     )

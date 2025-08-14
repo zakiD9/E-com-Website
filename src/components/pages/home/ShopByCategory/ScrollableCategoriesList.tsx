@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import CategoryCard from "../../products/CategoryCard";
+import CategoryCard from "../../products/category/CategoryCard";
 
 interface Category {
   id: number;
