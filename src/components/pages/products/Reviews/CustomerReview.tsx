@@ -16,7 +16,7 @@ const CustomerReview: React.FC<CustomerReviewProps> = ({
   reviewText="wlh ghir lproduct hada bien 3jbniwlh wlh ghir lproduct hada bien 3jbniwlh ghir lproduct hada bien 3jbniwlh ghir lproduct hada bien 3jbniwlh ghir lproduct hada bien 3jbnighir lproduct hada bien 3jbniwlh ghir lproduct hada bien 3jbniwlh ghir lproduct hada bien 3jbniwlh ghir lproduct hada bien 3jbni",
 }) => {
   return (
-    <div className="max-w-2xl p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+    <div className="max-w-2xl w-full p-6 mx-auto bg-white">
       <div className="mb-4 flex justify-between items-start">
         <div>
         <h3 className="text-lg font-medium text-gray-900">{customerName}</h3>
