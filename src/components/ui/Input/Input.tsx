@@ -12,7 +12,7 @@ export default function CustomInput({
   const [value, setValue] = useState("");
 
   return (
-    <div style={{ width: 300 }}>
+    <div>
       <label className="block mb-1 text-sm text-gray-600">{label}</label>
       <Input
       size={size}
@@ -21,6 +21,7 @@ export default function CustomInput({
         placeholder={placeholder}
         suffix={icon}  
         disabled={disabled}
+        className="flex-1 flex"
       />
     </div>
   );

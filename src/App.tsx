@@ -4,6 +4,8 @@ import "antd/dist/reset.css";
 import './index.css';      
 import ProductsList from './pages/ProductsList';
 import ProductDetails from './pages/ProductDetails';
+import Signup from './pages/authentication/Signup';
+import Login from './pages/authentication/Login';
 
 
 function App() {
@@ -14,6 +16,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/ProductsList" element={<ProductsList />} /> 
           <Route path="/Product" element={<ProductDetails />} /> 
+          <Route path="/Signup" element={<Signup />} /> 
+          <Route path="/Login" element={<Login />} /> 
+
         </Routes>
       </div>
     </BrowserRouter>
