@@ -1,4 +1,4 @@
-import {ArrowRightIcon, EyeDropperIcon } from "@heroicons/react/24/outline";
+import {ArrowRightIcon,EyeIcon } from "@heroicons/react/24/outline";
 import CustomInput from "../../ui/Input/Input";
 import { Checkbox } from "../../ui/Controls/Checkbox";
 import { Button } from "../../ui/button/Button";
@@ -19,8 +19,8 @@ export default function SignupForm(){
                 <CustomInput size="large" label="Last name"/>
             </div>
             <CustomInput size="large" label="Email"/>
-            <CustomInput size="large" label="Password" icon={<EyeDropperIcon className="w-4 h-4"/>}/>
-            <CustomInput size="large" label="Confirm password" icon={<EyeDropperIcon className="w-4 h-4"/>}/>
+            <CustomInput size="large" label="Password" icon={<EyeIcon className="w-4 h-4"/>}/>
+            <CustomInput size="large" label="Confirm password" icon={<EyeIcon className="w-4 h-4"/>}/>
             <div className="flex items-center gap-2">
             <Checkbox />
             <span className="text-sm text-gray-400">I agree to Privacy policy and Terms of Service.</span>
