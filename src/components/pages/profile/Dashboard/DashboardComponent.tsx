@@ -15,7 +15,7 @@ const sampleProducts = [
 export default function Dashboard(){
     
     return(
-        <div className="flex w-3/5 flex-col gap-2">
+        <div className="flex w-4/5 flex-col gap-2">
             <span className="text-xl">Hello, Oussama</span>
             <ProfileCompletionReminder />
             <OrdersDetails />

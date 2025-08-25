@@ -25,7 +25,7 @@ const menuItems: MenuItem[] = [
 
 export default function DashboardSidebar() {
   return (
-    <div className="w-1/5 bg-white border py-2 shadow-sm">
+    <div className="w-1/5 h-fit bg-white border py-2 shadow-sm">
       <ul className="flex flex-col">
         {menuItems.map((item, idx) => (
           <li

@@ -59,7 +59,7 @@ const data: Order[] = [
 
 export default function OrdersTable() {
   return (
-    <div>
+    <div className="mt-5">
       <h2 className="mb-4 text-lg font-semibold">Order History</h2>
       <ReusableTable<Order> columns={columns} data={data} rowKey="id" />
     </div>
