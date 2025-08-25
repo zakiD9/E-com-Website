@@ -57,10 +57,9 @@ const data: Order[] = [
 
 
 
-export default function OrdersTable() {
+export default function OrdersHistoryTable() {
   return (
-    <div className="mt-5">
-      <h2 className="mb-4 text-lg font-semibold">Placed order preview</h2>
+    <div>
       <ReusableTable<Order> columns={columns} data={data} rowKey="id" />
     </div>
   );
