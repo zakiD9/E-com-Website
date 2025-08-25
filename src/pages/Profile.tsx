@@ -4,6 +4,7 @@ import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/navbar/NavBar";
 import OrderHistory from "../components/pages/profile/OrderHistory/OrderHistorySection";
 import ShoppingCartSection from "../components/pages/profile/ShoppingCart/ShoppingCartSection";
+import WishList from "../components/pages/profile/WishList/WishList";
 
 
 
@@ -15,7 +16,7 @@ export default function Profile(){
             <Container>
                 <div className="flex gap-5 my-10">
                     <DashboardSidebar />
-                    <ShoppingCartSection />
+                    <WishList />
 
                 </div>
             </Container>
