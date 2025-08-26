@@ -2,8 +2,7 @@ import Container from "../components/layout/Container";
 import DashboardSidebar from "../components/layout/DashboardSideBar";
 import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/navbar/NavBar";
-import Settings from "../components/pages/profile/Settings/SettingsSection";
-
+import OrderDetails from "../components/pages/profile/OrderHistory/OrderDetails/OrderDetailsSection";
 
 
 export default function Profile(){
@@ -14,7 +13,7 @@ export default function Profile(){
             <Container>
                 <div className="flex gap-5 my-10">
                     <DashboardSidebar />
-                    <Settings />
+                    <OrderDetails />
 
                 </div>
             </Container>

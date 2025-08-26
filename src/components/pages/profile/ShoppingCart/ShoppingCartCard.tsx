@@ -13,6 +13,7 @@ interface ShoppingCartCardProps {
   quantity: number;
   image?: string;
   currency?: string;
+  disabled?:boolean;
   onIncrease?: (id: string | number) => void;
   onDecrease?: (id: string | number) => void;
   onRemove?: (id: string | number) => void;
@@ -27,6 +28,7 @@ export default function ShoppingCartCard({
   currency = "$",
   onIncrease,
   onDecrease,
+  disabled=false,
   onRemove,
 }: ShoppingCartCardProps) {
   return (
@@ -54,22 +56,26 @@ export default function ShoppingCartCard({
       </div>
 
       <div className="flex justify-center">
-        <QuantityButton value={quantity} />
+        {disabled ? (
+          <span className="text-gray-600 font-medium">x{quantity}</span>
+        ) : (
+          <QuantityButton value={quantity} />
+        )}
       </div>
 
-      {/* Total */}
       <div className="text-center text-gray-700 font-semibold">
         {currency}
         {(price * quantity).toFixed(2)}
       </div>
 
-      {/* Remove */}
-      <button
-        className="text-gray-400 hover:text-red-500"
-        onClick={() => onRemove?.(id)}
-      >
-        <CloseOutlined />
-      </button>
+      {!disabled && (
+        <button
+          className="text-gray-400 hover:text-red-500"
+          onClick={() => onRemove?.(id)}
+        >
+          <CloseOutlined />
+        </button>
+      )}
     </div>
   );
 }
