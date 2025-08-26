@@ -15,13 +15,13 @@ export default function ShippingAddress(){
                     </div>
                     <div className="flex w-full gap-5 ">
                         <div className="flex flex-col gap-3 w-3/6">
-                            <CustomInput label="Country"/>
-                            <CustomInput label="City"/>
+                            <CustomInput size="large" label="Country"/>
+                            <CustomInput size="large" label="City"/>
                         </div>
                         <div className="flex flex-col gap-3 w-3/6">
-                            <CustomInput label="Region/State"/>
-                            <CustomInput label="Zip Code"/>
-                            <CustomInput label="Address"/>
+                            <CustomInput size="large" label="Region/State"/>
+                            <CustomInput size="large" label="Zip Code"/>
+                            <CustomInput size="large" label="Address"/>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 justify-end mt-4">

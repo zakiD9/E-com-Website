@@ -19,14 +19,14 @@ export default function AccountSettingsForm(){
                     <span className="text-sm">Upload Image</span>
                 </div>
                 <div className="flex flex-col gap-3 w-2/5">
-                    <CustomInput label="First Name"/>
-                    <CustomInput label="Email Name"/>
+                    <CustomInput size="large"  label="First Name"/>
+                    <CustomInput size="large"  label="Email Name"/>
                     <CustomDropdown />
                 </div>
                 <div className="flex flex-col gap-3 w-2/5">
-                    <CustomInput label="Last Name"/>
-                    <CustomInput label="Phone Number"/>
-                    <CustomInput label="Date of Birth"/>
+                    <CustomInput  size="large" label="Last Name"/>
+                    <CustomInput size="large"  label="Phone Number"/>
+                    <CustomInput  size="large" label="Date of Birth"/>
                 </div>
             </div>
             <div className="flex items-center gap-4 justify-end mt-4">
