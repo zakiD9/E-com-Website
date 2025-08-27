@@ -7,6 +7,7 @@ interface CustomModalProps {
   content?: React.ReactNode;
   onClose: () => void;
   onConfirm?: () => void;
+  className:string;
   confirmText?: string;
   cancelText?: string;
 }
@@ -17,6 +18,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
   content = "This is the modal content.",
   onClose,
   onConfirm,
+  className="rounded-xl w-[1042px] h-[716px]",
   confirmText = "Confirm",
   cancelText = "Cancel",
 }) => {
@@ -26,7 +28,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
       onCancel={onClose}
       footer={null}
       centered
-      className="rounded-xl w-[1042px] h-[716px]"
+      className={className}
       bodyStyle={{ padding: "1rem" }}
     >
       <div className="flex flex-col gap-4">

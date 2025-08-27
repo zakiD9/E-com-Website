@@ -1,9 +1,10 @@
 import { Card } from "antd";
-import { PhotoIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Button } from "../../../../ui/button/Button";
+import ItemCard from "../ItemSmallCard";
 
 interface OrderItem {
-  id: string | number;
+  id: number;
   name: string;
   price: number;
   quantity: number;
@@ -35,31 +36,7 @@ export default function OrderSummary({
 
       <div className="flex flex-col gap-4">
         {items.map((item) => (
-          <div key={item.id} className="flex items-center gap-3">
-            <div className="w-12 h-12 border rounded flex items-center justify-center bg-gray-50">
-              {item.image ? (
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover rounded"
-                />
-              ) : (
-                <PhotoIcon className="w-6 h-6 text-gray-400" />
-              )}
-            </div>
-            <div className="flex-1">
-              <p className="text-sm font-medium text-gray-700 truncate">
-                {item.name}
-              </p>
-              <p className="text-xs text-gray-500">
-                {item.quantity} ×{" "}
-                <span className="font-semibold text-gray-700">
-                  {currency}
-                  {item.price}
-                </span>
-              </p>
-            </div>
-          </div>
+          <ItemCard id={item.id} name={item.name} price={item.price} variant="order" image={item.image} quantity={item.quantity} />
         ))}
       </div>
 

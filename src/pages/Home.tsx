@@ -1,6 +1,7 @@
 import Container from "../components/layout/Container"
 import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/navbar/NavBar";
+import SignInModal from "../components/pages/Authentication/SignInPopup";
 import BestDeals from "../components/pages/home/BestDealsComponent";
 import FeaturedProducts from "../components/pages/home/FeaturedProductsComponents";
 import LandingComponent from "../components/pages/home/LandingComponent";
@@ -20,6 +21,7 @@ export default function Home(){
         <BestDeals />
         <ShopByCategory />
         <FeaturedProducts />
+        <SignInModal open={true}/>
         <SecLandingComponent />
         <SpecificProductCategories />
     </Container>
