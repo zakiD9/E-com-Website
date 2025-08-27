@@ -1,14 +1,19 @@
 import { Checkbox } from "../../../../ui/Controls/Checkbox";
 import CustomInput from "../../../../ui/Input/Input";
 import CustomTextArea from "../../../../ui/TextArea";
+import OrderSummary from "./OrderSummary";
 import PaymentOption from "./PaymentOption";
 
-
+const products = [
+  { id: 1, name: "Nike Air Zoom Pegasus 40", price: 120, quantity: 2 },
+  { id: 2, name: "Adidas Ultraboost Light", price: 150, quantity: 1 },
+  { id: 3, name: "Puma Velocity Nitro", price: 100, quantity: 3 },
+];
 
 export default function Billing(){
     
     return(
-        <div className="flex w-full">
+        <div className="flex w-full gap-5">
             <div className="w-2/3 flex flex-col gap-3">
                 <span className="font-semibold text-lg">Billing Information</span>
                 <hr className="border-t-2"/>
@@ -41,7 +46,7 @@ export default function Billing(){
                 </div>
             </div>
             <div className="w-1/3">
-                
+                <OrderSummary items={products} shipping={12}/>
             </div>
         </div>
     )
