@@ -1,5 +1,6 @@
-import { Card, Button } from "antd";
+import { Card } from "antd";
 import { PhotoIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { Button } from "../../../../ui/button/Button";
 
 interface OrderItem {
   id: string | number;
@@ -62,7 +63,6 @@ export default function OrderSummary({
         ))}
       </div>
 
-      {/* Totals */}
       <div className="mt-4 pt-3 text-sm space-y-1">
         <div className="flex justify-between text-gray-600">
           <span>Sub-Total:</span>
@@ -88,16 +88,9 @@ export default function OrderSummary({
         </div>
       </div>
 
-      {/* Place Order */}
-      <Button
-        type="primary"
-        block
-        className="mt-4 flex items-center justify-center gap-2"
-        onClick={onPlaceOrder}
-      >
-        Place Order
-        <ArrowRightIcon className="w-4 h-4" />
-      </Button>
+      <div className="flex justify-center mt-1">
+      <Button variant="primary" onClick={onPlaceOrder} iconPosition="right" label="Place Order" icon={<ArrowRightIcon/>}/>
+      </div>
     </Card>
   );
 }
