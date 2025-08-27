@@ -21,7 +21,6 @@ export default function Home(){
         <BestDeals />
         <ShopByCategory />
         <FeaturedProducts />
-        <SignInModal open={true}/>
         <SecLandingComponent />
         <SpecificProductCategories />
     </Container>

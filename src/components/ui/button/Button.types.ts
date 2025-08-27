@@ -6,10 +6,10 @@ export interface ButtonProps {
   label: string;
   variant?: ButtonVariant;
   disabled?: boolean;
-  size:string;
+  size?:string;
   onClick?: () => void;
   icon?: React.ReactNode;
-  fullWidth: false;
+  fullWidth?: false;
 
   isPill?: boolean;
   isLoading?: boolean;
