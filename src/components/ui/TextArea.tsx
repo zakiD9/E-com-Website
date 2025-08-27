@@ -30,7 +30,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
   };
 
   return (
-    <div className={`flex flex-col gap-3 w-full max-w-md mx-auto ${className}`}>
+    <div className={`flex flex-1 gap-3 w-full max-w-md mx-auto ${className}`}>
       <TextArea
         value={value}
         onChange={handleChange}

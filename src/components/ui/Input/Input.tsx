@@ -22,6 +22,7 @@ export default function CustomInput({
         suffix={icon}  
         disabled={disabled}
         className="flex-1 flex"
+        
       />
     </div>
   );
