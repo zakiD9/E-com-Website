@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import EmailConfirmation from './pages/authentication/Emailconfirmation';
 import ForgetPassword from './pages/authentication/Forgetpassword';
 import ResetPassword from './pages/authentication/Resetpassword';
+import NotFound from './pages/Notfound';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/EmailConfirmation" element={<EmailConfirmation />} /> 
           <Route path="/ForgetPassword" element={<ForgetPassword />} /> 
           <Route path="/ResetPassword" element={<ResetPassword />} /> 
+          <Route path="/*" element={<NotFound />} />
 
         </Routes>
       </div>
