@@ -3,9 +3,9 @@ import type { ButtonProps } from "./Button.types";
 import variantStyles from "./Button.styles";
 
 const sizeStyles = {
-  sm: "px-3 py-1.5 text-sm",
-  md: "px-4 py-2 text-base",
-  lg: "px-6 py-3 text-lg",
+  sm: "px-4 py-1.5 text-sm",
+  md: "px-6 py-2 text-base",
+  lg: "px-8 py-3 text-lg",
 };
 
 export const Button: React.FC<ButtonProps> = ({

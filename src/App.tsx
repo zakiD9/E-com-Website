@@ -7,6 +7,9 @@ import ProductDetails from './pages/ProductDetails';
 import Signup from './pages/authentication/Signup';
 import Login from './pages/authentication/Login';
 import Profile from './pages/Profile';
+import EmailConfirmation from './pages/authentication/Emailconfirmation';
+import ForgetPassword from './pages/authentication/Forgetpassword';
+import ResetPassword from './pages/authentication/Resetpassword';
 
 
 function App() {
@@ -20,6 +23,10 @@ function App() {
           <Route path="/Signup" element={<Signup />} /> 
           <Route path="/Login" element={<Login />} /> 
           <Route path="/Profile" element={<Profile />} /> 
+          <Route path="/EmailConfirmation" element={<EmailConfirmation />} /> 
+          <Route path="/ForgetPassword" element={<ForgetPassword />} /> 
+          <Route path="/ResetPassword" element={<ResetPassword />} /> 
+
 
 
         </Routes>
