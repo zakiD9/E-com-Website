@@ -5,6 +5,7 @@ import { Button } from "../../ui/button/Button";
 
 
 export default function EmailConfirmationForm(){
+    
 
     return(
         <div className="shadow-lg w-1/2 rounded-3xl gap-3 py-5 px-10 flex flex-col">
