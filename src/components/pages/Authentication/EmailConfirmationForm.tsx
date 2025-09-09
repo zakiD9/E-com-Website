@@ -12,21 +12,22 @@ export default function EmailConfirmationForm(){
     const {resendOtp,verifyAccount,error,loading,user}=useUserStore();
      const handleSubmit = async (e:React.FormEvent)=>{
         e.preventDefault();
-        await resendOtp(user.email);
-     }
-     const handleSendNewCode = async () =>{
         await verifyAccount(user.email,otp);
      }
+     const handleSendNewCode = async () =>{
+        await resendOtp(user.email);
+    }
 
     return(
-        <div className="shadow-lg w-1/2 rounded-3xl gap-3 py-5 px-10 flex flex-col">
+        <form onSubmit={handleSubmit} className="shadow-lg w-1/2 rounded-3xl gap-3 py-5 px-10 flex flex-col">
             <h1 className="text-2xl font-extrabold">Verify your email</h1>
             <span className="text-xs text-gray-600">Enter the 6-digit PIN code sent to your email *********ma78@gmail.com.</span>
             <OtpInput value={otp} onChange={(e)=>{setOtp(e)}} />
             <div className="flex justify-center">
-                <Button variant="primary" size="md" isPill={true} label="Verify" />
+                <Button variant="primary" size="md" isPill={true} label={loading ? "verifying..." : "Verify"} />
             </div>
             <TextButton onClick={handleSendNewCode} label="Request new code" />
-        </div>
+            <span className="text-red-500 text-center text-sm">{error ? error : "" }</span>
+        </form>
     )
 }

@@ -1,9 +1,8 @@
-import {ArrowRightIcon, CircleStackIcon, EyeIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
+import {ArrowRightIcon, EyeIcon } from "@heroicons/react/24/outline";
 import CustomInput from "../../ui/Input/Input";
 import { Button } from "../../ui/button/Button";
 import { useState } from "react";
 import { useUserStore } from "../../../store/userstore";
-import { TextButton } from "../../ui/button/TextButton";
 import { Link } from "react-router-dom";
 
 

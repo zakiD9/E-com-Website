@@ -36,7 +36,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ open, onClose }) => {
         <p className="text-xs">Forget Password</p>
         </div>
         <span className="text-red-500 text-center text-sm">{error ? error : "" }</span>
-        <Button variant="primary" label="Sign In" icon={<ArrowRightIcon />} iconPosition="right"/>
+        <Button variant="primary" label={loading ? "signing in.." : "Sign In"} icon={<ArrowRightIcon />} iconPosition="right"/>
         <Divider className="m-0" plain>Or</Divider>
         <Button  label="Sign Up" />
       </form>

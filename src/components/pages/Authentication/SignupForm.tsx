@@ -8,7 +8,7 @@ import { useUserStore } from "../../../store/userstore";
 
 
 export default function SignupForm(){
-
+    const [acceptedTerms, setAcceptedTerms] = useState(false);
     const [email,setEmail]=useState<string>("");
     const [password,setPassword]=useState<string>("");
     const [confirmPassword,setConfirmPassword]=useState<string>("");
@@ -19,6 +19,10 @@ export default function SignupForm(){
     
     const handleSubmit = async (e:React.FormEvent)=>{
         e.preventDefault();
+        if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+        }
         await register(firstName, lastName, email, password);
     };
     
@@ -38,7 +42,7 @@ export default function SignupForm(){
             <CustomInput value={password} onChange={(e)=>{setPassword(e.target.value)}} size="large" label="Password" icon={<EyeIcon className="w-4 h-4"/>}/>
             <CustomInput value={confirmPassword} onChange={(e)=>{setConfirmPassword(e.target.value)}} size="large" label="Confirm password" icon={<EyeIcon className="w-4 h-4"/>}/>
             <div className="flex items-center gap-2">
-            <Checkbox />
+            <Checkbox checked={acceptedTerms} onChange={() => setAcceptedTerms(!acceptedTerms)} />
             <span className="text-sm text-gray-400">I agree to Privacy policy and Terms of Service.</span>
             </div>
             <span className="text-red-500 text-center text-sm">{error ? error : "" }</span>

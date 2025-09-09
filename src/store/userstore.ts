@@ -15,6 +15,8 @@ interface AuthState {
   login: (email: string, password: string) => Promise<void>;
   register: (firstName: string,lastName:string, email: string, password: string) => Promise<void>;
   resendOtp:(email: string) => Promise<void>;
+  resetPassword:(email: string,resetCode:string ,newPassword: string) => Promise<void>;
+  changePassword:(currentPassword: string, newPassword: string) => Promise<void>;
   verifyAccount:(email: string,otp:string) => Promise<void>;
   forgetPassword:(email: string) => Promise<void>;
   logout: () => void;
@@ -49,7 +51,27 @@ export const useUserStore = create<AuthState>((set) => ({
       set({ error: err.response?.data?.error || "try again", loading: false });
     }
   },
-  verifyAccount:async (email,otp) => {
+  resetPassword: async (email,resetCode,newPassword) => {
+    set({ loading: true, error: null });
+    try {
+      await resetPassword(email,resetCode,newPassword);
+      set({ loading: false });
+    } catch (err: any) {
+      set({ error: err.response?.data?.error || "error", loading: false });
+    }
+  },
+
+  changePassword: async (currentPassword, newPassword) => {
+    set({ loading: true, error: null });
+    try {
+      await verifyAccount(currentPassword,newPassword);
+      set({ loading: false });
+    } catch (err: any) {
+      set({ error: err.response?.data?.error || "error", loading: false });
+    }
+  },
+
+  verifyAccount: async (email,otp) => {
     set({ loading: true, error: null });
     try {
       await verifyAccount(email,otp);
