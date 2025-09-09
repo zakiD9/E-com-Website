@@ -14,6 +14,8 @@ interface AuthState {
   error: string | null;
   login: (email: string, password: string) => Promise<void>;
   register: (firstName: string,lastName:string, email: string, password: string) => Promise<void>;
+  resendOtp:(email: string) => Promise<void>;
+  verifyAccount:(email: string,otp:string) => Promise<void>;
   forgetPassword:(email: string) => Promise<void>;
   logout: () => void;
 }
@@ -42,6 +44,25 @@ export const useUserStore = create<AuthState>((set) => ({
     set({ loading: true, error: null });
     try {
       await forgetPassword(email);
+      set({ loading: false });
+    } catch (err: any) {
+      set({ error: err.response?.data?.error || "try again", loading: false });
+    }
+  },
+  verifyAccount:async (email,otp) => {
+    set({ loading: true, error: null });
+    try {
+      await verifyAccount(email,otp);
+      set({ loading: false });
+    } catch (err: any) {
+      set({ error: err.response?.data?.error || "try later", loading: false });
+    }
+  },
+
+  resendOtp: async (email) => {
+    set({ loading: true, error: null });
+    try {
+      await resendOtp(email);
       set({ loading: false });
     } catch (err: any) {
       set({ error: err.response?.data?.error || "try again", loading: false });
