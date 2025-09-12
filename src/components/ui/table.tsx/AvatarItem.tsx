@@ -4,7 +4,7 @@ type UserProps = {
   avatarUrl?: string;
 };
 
-export default function UserComponent({ firstName,lastName, avatarUrl }: UserProps) {
+export default function AvatarItem({ firstName,lastName, avatarUrl }: UserProps) {
     const initials = firstName
     .split(" ")
     .map((n) => n[0])
