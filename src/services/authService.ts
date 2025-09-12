@@ -5,7 +5,7 @@ export const loginUser = (email: string, password: string) => {
 };
 
 export const registerUser = (data: { firstName:string; lastName:string; email: string; password: string }) => {
-  return api.post("/auth/register", data);
+  return api.post("/auth/sign-up", data);
 };
 
 export const verifyAccount = (email: string, otp: string) => {

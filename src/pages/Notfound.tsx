@@ -1,7 +1,7 @@
 import { ArrowLeftIcon, HomeIcon } from "@heroicons/react/24/outline";
-import Container from "../components/layout/Container"
-import Footer from "../components/layout/Footer";
-import Navbar from "../components/layout/navbar/NavBar";
+import Container from "../components/pages/customer/layout/Container"
+import Footer from "../components/pages/customer/layout/Footer";
+import Navbar from "../components/pages/customer/layout/navbar/NavBar";
 import { Button } from "../components/ui/button/Button";
 
 import NotFoundImg from "../assets/0d0428c295485ec1d2d688830db1db30d617a9eb.png";

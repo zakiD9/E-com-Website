@@ -5,6 +5,7 @@ export default interface CustomInputProps {
   disabled?: boolean;
   icon?: ReactNode;
   placeholder?: string;
+  type?: "text" | "password";
   size?: "small" | "middle" | "large";
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;

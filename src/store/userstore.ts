@@ -2,9 +2,9 @@ import { create } from "zustand";
 import { loginUser, registerUser, verifyAccount, resendOtp, resetPassword, forgetPassword, changePassword, logoutUser } from "../services/authService";
 
 interface User {
-  id: number;
-  name: string;
-  email: string;
+  id?: number;
+  name?: string;
+  email?: string;
 }
 
 interface AuthState {
@@ -39,8 +39,22 @@ export const useUserStore = create<AuthState>((set) => ({
 
       localStorage.setItem("token", token);
     } catch (err: any) {
-      set({ error: err.response?.data?.error || "Login failed", loading: false });
+      console.log(err);
+  let errorMsg = "Registration failed";
+
+  if (err.response?.data?.errors) {
+    const errors = err.response.data.errors;
+
+    const firstKey = Object.keys(errors)[0];
+
+    if (firstKey && errors[firstKey]?.length > 0) {
+      errorMsg = errors[firstKey][0];
     }
+  } else if (err.response?.data?.title) {
+    errorMsg = err.response.data.title;
+  }
+  set({ error: errorMsg, loading: false  });
+}
   },
   forgetPassword:async (email) => {
     set({ loading: true, error: null });
@@ -95,10 +109,28 @@ export const useUserStore = create<AuthState>((set) => ({
     set({ loading: true, error: null });
     try {
       await registerUser({ firstName, lastName, email, password });
-      set({ loading: false });
+      set({ loading: false,user: {
+        id: res.data?.id,         
+        name: `${firstName} ${lastName}`,
+        email: email,            
+      }, });
     } catch (err: any) {
-      set({ error: err.response?.data?.error || "Registration failed", loading: false });
+  let errorMsg = "Registration failed";
+
+  if (err.response?.data?.errors) {
+    const errors = err.response.data.errors;
+
+    const firstKey = Object.keys(errors)[0];
+
+    if (firstKey && errors[firstKey]?.length > 0) {
+      errorMsg = errors[firstKey][0];
     }
+  } else if (err.response?.data?.title) {
+    errorMsg = err.response.data.title;
+  }
+  set({ error: errorMsg, loading: false  });
+}
+
   },
   logout: () => {
     logoutUser().catch(() => {});

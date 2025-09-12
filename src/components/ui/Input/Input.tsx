@@ -8,12 +8,14 @@ export default function CustomInput({
   placeholder = "Enter text here",
   size = "middle",
   value,
+  type = "text",
   onChange
 }: CustomInputProps) {
+  const InputComponent = type === "password" ? Input.Password : Input;
   return (
     <div>
       <label className="block mb-1 text-sm text-gray-600">{label}</label>
-      <Input
+      <InputComponent
         size={size}
         value={value}
         onChange={onChange}
