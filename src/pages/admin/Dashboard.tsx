@@ -1,11 +1,10 @@
 
 
-
 export default function AdminDashboard(){
 
     return(
-        <div>
-            
+        <div className="m-10">
+
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { ReusableTable } from "../../../../ui/Table";
+import { ReusableTable } from "../../../../ui/table.tsx/Table";
 
 type Order = {
   id: string;

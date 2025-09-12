@@ -8,6 +8,7 @@ type ReusableTableProps<T> = {
   loading?: boolean;
   rowKey?: string;
   pagination?: TableProps<T>["pagination"];
+  rowSelection?: TableProps<T>["rowSelection"];
 };
 
 export function ReusableTable<T extends object>({
@@ -15,6 +16,7 @@ export function ReusableTable<T extends object>({
   data,
   loading = false,
   rowKey = "id",
+  rowSelection,
 }: ReusableTableProps<T>) {
   return (
     <Table<T>
@@ -23,6 +25,7 @@ export function ReusableTable<T extends object>({
       rowKey={rowKey}
       loading={loading}
       bordered
+      rowSelection={rowSelection}
     />
   );
 }
