@@ -1,33 +1,16 @@
-import ReusableTabs from "../../components/pages/admin/layout/Tabs";
+import { ShoppingBagIcon } from "@heroicons/react/24/outline";
+import StatCard from "../../components/pages/admin/sections/dashboard/StatComponent";
 
 export default function AdminDashboard() {
-  const items = [
-    {
-      key: "1",
-      label: "Home",
-      children: <div>Welcome to Home</div>,
-    },
-    {
-      key: "2",
-      label: "Profile",
-      children: <div>This is your Profile</div>,
-    },
-    {
-      key: "3",
-      label: "Settings",
-      children: <div>Adjust your Settings here</div>,
-    },
-  ];
+  const item = {name:"total orders",
+    numb:20,
+    icon:<ShoppingBagIcon className="w-10 h-10"/>
+   }
 
   return (
-    <div className="p-4">
-      <ReusableTabs
-        items={items}
-        defaultActiveKey="1"
-        onChange={(key) => console.log("Switched to tab:", key)}
-        type="card"
-        centered
-      />
+    <div className="p-4 w-full">
+      
+      <StatCard {...item}/>
     </div>
   );
 }
