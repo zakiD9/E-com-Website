@@ -7,7 +7,7 @@ export default function Status({ status = "Active" }: StatusProps) {
 
   return (
     <div
-      className={`rounded-full p-2 ${
+      className={`rounded-full w-fit p-2 ${
         isBlocked ? "bg-red-100" : "bg-blue-100"
       }`}
     >

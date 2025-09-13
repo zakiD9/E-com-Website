@@ -1,5 +1,5 @@
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
-import StatCard from "../../components/pages/admin/sections/dashboard/StatComponent";
+import ProductManagementSection from "../../components/pages/admin/sections/productmanagement/ProductManagementSection";
 
 export default function AdminDashboard() {
   const item = {name:"total orders",
@@ -9,8 +9,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="p-4 w-full">
-      
-      <StatCard {...item}/>
+      <ProductManagementSection />
     </div>
   );
 }

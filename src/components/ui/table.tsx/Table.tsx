@@ -26,6 +26,8 @@ export function ReusableTable<T extends object>({
       loading={loading}
       bordered
       rowSelection={rowSelection}
+      scroll={{ x: true }}
+      tableLayout="fixed" 
     />
   );
 }
