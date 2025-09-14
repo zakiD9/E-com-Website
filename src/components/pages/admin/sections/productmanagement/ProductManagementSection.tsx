@@ -1,5 +1,6 @@
 import ReusableTabs from "../../layout/Tabs";
 import AllProductSection from "./Allproducts/AllProductsSection";
+import BrandsSection from "./brands/BrandsSection";
 import CategorySection from "./Categories/CategorySection";
 
 const tabItems = [
@@ -16,7 +17,7 @@ const tabItems = [
     {
       key: "3",
       label: "Brands",
-      children: <div>⚙️ This is the Settings tab content</div>,
+      children: <BrandsSection />,
     },
   ];
 
@@ -26,7 +27,7 @@ const tabItems = [
 export default function ProductManagementSection(){
 
     return(
-        <div className="flex w-full flex-col gap-5 mx-5 my-5">
+        <div className="flex w-full bg-[#F5F5F5] flex-col gap-5 px-5 py-5">
             <ReusableTabs items={tabItems}/>
 
         </div>

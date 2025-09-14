@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <aside
       className="
-        group relative h-screen bg-gray-100 py-2 flex flex-col gap-1
+        group relative h-screen py-2 flex flex-col gap-1
         w-20 hover:w-72 transition-all duration-300 items-center hover:items-start
       "
     >

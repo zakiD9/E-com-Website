@@ -39,7 +39,7 @@ const categories = [
 export default function CategorySection(){
 
     return(
-        <div className="grid grid-cols-4 grid-rows-3 w-full gap-4 bg-[#F5F5F5] p-10">
+        <div className="grid grid-cols-4 grid-rows-3 w-full h-screen gap-4 p-10">
             {categories.map((category)=>(
                 <CategoryCard key={category.categoryName} {...category} />
             ))
