@@ -1,4 +1,4 @@
-import { HomeIcon, Cog6ToothIcon, UserIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import { HomeIcon, Cog6ToothIcon, UserIcon, Bars3Icon, ClipboardDocumentListIcon, ArchiveBoxArrowDownIcon, ChatBubbleLeftEllipsisIcon } from "@heroicons/react/24/outline";
 import Section from "./section";
 
 type SidebarItem = {
@@ -10,8 +10,11 @@ type SidebarItem = {
 export default function Sidebar() {
   const items: SidebarItem[] = [
     { label: "Dashboard", icon: <HomeIcon className="w-6 h-6" />, selected: true },
+    { label: "Product Management", icon: <ClipboardDocumentListIcon className="w-6 h-6" /> },
+    { label: "Orders", icon: <ArchiveBoxArrowDownIcon className="w-6 h-6" /> },
+    { label: "Reviews", icon: <ChatBubbleLeftEllipsisIcon className="w-6 h-6" /> },
+    { label: "Customers", icon: <UserIcon className="w-6 h-6" /> },
     { label: "Settings", icon: <Cog6ToothIcon className="w-6 h-6" /> },
-    { label: "Profile", icon: <UserIcon className="w-6 h-6" /> },
   ];
 
   return (
