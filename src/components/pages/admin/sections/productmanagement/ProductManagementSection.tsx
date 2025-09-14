@@ -1,5 +1,6 @@
 import ReusableTabs from "../../layout/Tabs";
-import AllProductSection from "./AllProductsSection";
+import AllProductSection from "./Allproducts/AllProductsSection";
+import CategorySection from "./Categories/CategorySection";
 
 const tabItems = [
     {
@@ -10,7 +11,7 @@ const tabItems = [
     {
       key: "2",
       label: "Categories",
-      children: <div>👤 This is the Users tab content</div>,
+      children: <CategorySection />,
     },
     {
       key: "3",

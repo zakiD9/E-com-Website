@@ -1,11 +1,11 @@
 import { CheckIcon, FunnelIcon, PlusIcon, TrashIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Button } from "../../../../ui/button/Button";
-import { SearchBar } from "../../../../ui/search/SearchInput";
-import { ReusableTable } from "../../../../ui/table.tsx/Table";
-import EditButton from "../../../../ui/table.tsx/Edit";
-import Status from "../../../../ui/table.tsx/Status";
-import AvatarItem from "../../../../ui/table.tsx/AvatarItem";
-import DeleteButton from "../../../../ui/table.tsx/Delete";
+import { Button } from "../../../../../ui/button/Button";
+import { SearchBar } from "../../../../../ui/search/SearchInput";
+import { ReusableTable } from "../../../../../ui/table.tsx/Table";
+import EditButton from "../../../../../ui/table.tsx/Edit";
+import Status from "../../../../../ui/table.tsx/Status";
+import AvatarItem from "../../../../../ui/table.tsx/AvatarItem";
+import DeleteButton from "../../../../../ui/table.tsx/Delete";
 
 
   type Product = {
