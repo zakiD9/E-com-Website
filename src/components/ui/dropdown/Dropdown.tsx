@@ -30,11 +30,11 @@ export const testFilters = [
   },
 ];
 
-
 export default function CustomDropdown({
-  menuItems=testFilters,
+  menuItems = testFilters,
   triggerLabel = "Select an option",
-}: CustomDropdownProps) {
+  label,
+}: CustomDropdownProps & { label?: string }) {
   const menu = (
     <Menu>
       {menuItems.map(({ key, label, onClick }) => (
@@ -46,10 +46,13 @@ export default function CustomDropdown({
   );
 
   return (
-    <Dropdown overlay={menu} trigger={["click"]}>
-      <Button>
-        {triggerLabel} <DownOutlined />
-      </Button>
-    </Dropdown>
+    <div className="w-full" style={{ display: "inline-flex", flexDirection: "column", gap: 4 }}>
+      {label && <span className="text-sm">{label}</span>}
+      <Dropdown overlay={menu} trigger={["click"]}>
+        <Button>
+          {triggerLabel} <DownOutlined />
+        </Button>
+      </Dropdown>
+    </div>
   );
 }

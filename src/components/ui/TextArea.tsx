@@ -9,6 +9,7 @@ interface CustomTextAreaProps {
   buttonText?: string;
   onSubmit?: (value: string) => void;
   className?: string;
+  label?: string; // <-- optional label
 }
 
 const CustomTextArea: React.FC<CustomTextAreaProps> = ({
@@ -17,6 +18,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
   buttonText = "Submit",
   onSubmit,
   className = "",
+  label,
 }) => {
   const [value, setValue] = useState("");
 
@@ -30,14 +32,22 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
   };
 
   return (
-    <div className={`flex flex-1 gap-3 w-full max-w-md mx-auto ${className}`}>
-      <TextArea
-        value={value}
-        onChange={handleChange}
-        placeholder={placeholder}
-        rows={rows}
-        className="rounded-lg border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-      />
+    <div className={`flex flex-col flex-1 gap-2 w-full max-w-md mx-auto ${className}`}>
+      {label && <span className="font-medium text-sm text-gray-700">{label}</span>}
+      <div className="flex gap-3">
+        <TextArea
+          value={value}
+          onChange={handleChange}
+          placeholder={placeholder}
+          rows={rows}
+          className="rounded-lg border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+        />
+        {onSubmit && (
+          <Button type="primary" onClick={handleSubmit}>
+            {buttonText}
+          </Button>
+        )}
+      </div>
     </div>
   );
 };
