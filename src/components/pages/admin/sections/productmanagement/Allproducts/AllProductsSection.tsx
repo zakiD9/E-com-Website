@@ -4,7 +4,6 @@ import { SearchBar } from "../../../../../ui/search/SearchInput";
 import { ReusableTable } from "../../../../../ui/table.tsx/Table";
 import EditButton from "../../../../../ui/table.tsx/Edit";
 import Status from "../../../../../ui/table.tsx/Status";
-import AvatarItem from "../../../../../ui/table.tsx/AvatarItem";
 import DeleteButton from "../../../../../ui/table.tsx/Delete";
 
 
