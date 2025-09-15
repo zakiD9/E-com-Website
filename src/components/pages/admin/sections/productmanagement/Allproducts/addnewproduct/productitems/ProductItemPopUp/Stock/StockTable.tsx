@@ -1,6 +1,6 @@
-import DeleteButton from "../../../../../../../ui/table.tsx/Delete";
-import EditButton from "../../../../../../../ui/table.tsx/Edit";
-import Status from "../../../../../../../ui/table.tsx/Status";
+import DeleteButton from "../../../../../../../../../ui/table.tsx/Delete";
+import Status from "../../../../../../../../../ui/table.tsx/Status";
+import StockPopUp from "./StockPopUp";
 
 type StockItem = {
   stockId: number | string;
@@ -45,7 +45,7 @@ export default function StockTable({ items, onEdit, onDelete }: StockTableProps)
             <Status size="small" status={item.status} />
           </span>
           <div className="flex">
-            <EditButton onClick={() => onEdit?.(item.stockId)} />
+            <StockPopUp />
             <DeleteButton onClick={() => onDelete?.(item.stockId)} />
           </div>
         </div>

@@ -1,11 +1,10 @@
 import React from "react";
 import { Collapse, Space } from "antd";
 import {
-  EditOutlined,
   DownOutlined,
 } from "@ant-design/icons";
 import DeleteButton from "./table.tsx/Delete";
-import EditButton from "./table.tsx/Edit";
+import QndAPopUp from "../pages/admin/sections/productmanagement/Allproducts/addnewproduct/QndA/QndAPopUp";
 
 const { Panel } = Collapse;
 
@@ -38,7 +37,7 @@ export default function QndACollapse({ items }: ReusableCollapseProps) {
               <span>{title}</span>
               <Space>
                 {onEdit && (
-                  <EditButton userId={1} />
+                  <QndAPopUp />
                 )}
                 {onDelete && (
                   <DeleteButton userId={1}

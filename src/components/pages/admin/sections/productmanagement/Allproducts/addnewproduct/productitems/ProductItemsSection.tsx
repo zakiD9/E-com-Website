@@ -4,7 +4,7 @@ import { TextButton } from "../../../../../../../ui/button/TextButton";
 import { ReusableTable } from "../../../../../../../ui/table.tsx/Table";
 import EditButton from "../../../../../../../ui/table.tsx/Edit";
 import DeleteButton from "../../../../../../../ui/table.tsx/Delete";
-import ProductItemPopUp from "./ProductItemPopUp";
+import ProductItemPopUp from "./ProductItemPopUp/ProductItemPopUp";
 
 type Item = {
   itemName: string;

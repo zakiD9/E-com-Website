@@ -1,4 +1,4 @@
-import EditButton from "../../../../../../../ui/table.tsx/Edit";
+import AddNewVariantPopUp from "./AddNewVariantPopUp";
 
 type VariantItemProps = {
   label: string;
@@ -11,7 +11,7 @@ export default function VariantItem(props:VariantItemProps){
         <div className="flex mt-1 justify-between">
                             <span className="font-semibold">{props.label}:</span>
                             <span className="mr-52">{props.value}</span>
-                            <EditButton />
+                            <AddNewVariantPopUp />
                             </div>
     )
 }

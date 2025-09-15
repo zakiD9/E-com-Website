@@ -1,10 +1,10 @@
 import { useState } from "react";
-import CustomModal from "../../../../../../../ui/Modal";
-import EditButton from "../../../../../../../ui/table.tsx/Edit";
-import CustomInput from "../../../../../../../ui/Input/Input";
-import VariantItem from "./VariantItem";
-import StockTable from "./StockTable";
-import { Button } from "../../../../../../../ui/button/Button";
+import CustomModal from "../../../../../../../../ui/Modal";
+import EditButton from "../../../../../../../../ui/table.tsx/Edit";
+import CustomInput from "../../../../../../../../ui/Input/Input";
+import VariantItem from "./Variant/VariantItem";
+import StockTable from "./Stock/StockTable";
+import { Button } from "../../../../../../../../ui/button/Button";
 
 const variants = [
     { label: "Size", value: 44 },
