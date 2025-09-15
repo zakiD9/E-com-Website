@@ -4,6 +4,7 @@ import { TextButton } from "../../../../../../../ui/button/TextButton";
 import { ReusableTable } from "../../../../../../../ui/table.tsx/Table";
 import EditButton from "../../../../../../../ui/table.tsx/Edit";
 import DeleteButton from "../../../../../../../ui/table.tsx/Delete";
+import ProductItemPopUp from "./ProductItemPopUp";
 
 type Item = {
   itemName: string;
@@ -40,7 +41,7 @@ const columns: ColumnsType<Item> = [
     key: "action",
     render: (_, record) => (
       <div className="flex gap-2">
-        <EditButton userId={record.id} />
+        <ProductItemPopUp />
         <DeleteButton userId={record.id} />
       </div>
     ),
