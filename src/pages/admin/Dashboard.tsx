@@ -1,12 +1,12 @@
 import Sidebar from "../../components/pages/admin/layout/sidebar/SideBar";
-import OrdersSection from "../../components/pages/admin/sections/orders/OrdersSection";
+import ProductManagementSection from "../../components/pages/admin/sections/productmanagement/ProductManagementSection";
 
 export default function AdminDashboard() {
 
   return (
     <div className="w-full flex">
       <Sidebar />
-      <OrdersSection />
+      <ProductManagementSection />
     </div>
   );
 }

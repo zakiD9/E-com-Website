@@ -1,3 +1,4 @@
+import NewCategoryPopUp from "./AddNewCategoryPopUp";
 import CategoryCard from "./CategoryCard";
 
 const categories = [
@@ -43,8 +44,8 @@ export default function CategorySection(){
             {categories.map((category)=>(
                 <CategoryCard key={category.categoryName} {...category} />
             ))
-
             }
+            <NewCategoryPopUp />
         </div>
     )
 }

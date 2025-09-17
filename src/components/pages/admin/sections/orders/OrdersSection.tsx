@@ -29,14 +29,14 @@ const columns: ColumnsType<Order> = [
     title: "Customer Name",
     dataIndex: "customerName",
     key: "name",
-      width: 30,
-
+    width: 30,
   },{
     title: "Order Date",
     dataIndex: "orderDate",
     key: "orderDate",
-      width: 30,
+    width: 30,
 
+      
   },{
     title: "Total",
     dataIndex: "total",
