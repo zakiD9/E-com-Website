@@ -4,6 +4,7 @@ import EditButton from "../../../../../ui/table.tsx/Edit";
 import OrderDetails from "./OrderDetails";
 import ProductItemsList from "./ProductItemsList";
 import CustomDropdown from "../../../../../ui/dropdown/Dropdown";
+import { EyeIcon } from "@heroicons/react/24/outline";
 
 
 
@@ -13,7 +14,12 @@ export default function OrderPopUp(){
     const [isOpen, setIsOpen] = useState(false);
     return(
         <div>
-            <EditButton onClick={()=>{setIsOpen(true)}} userId={1} />
+            <button
+      className="p-1 duration-150 active:scale-110 hover:text-gray-800 transition"
+        onClick={()=>{setIsOpen(true)}}
+    >
+      <EyeIcon className="h-5 w-5" />
+    </button>
       <CustomModal
         visible={isOpen}
         className="w-3/5"
