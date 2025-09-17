@@ -5,6 +5,7 @@ import EditButton from "../../../../ui/table.tsx/Edit";
 import DeleteButton from "../../../../ui/table.tsx/Delete";
 import { Button } from "../../../../ui/button/Button";
 import Status from "../../../../ui/table.tsx/Status";
+import OrderPopUp from "./Orderpopup/OrderPopUp";
 
 type Order = {
   id: number;
@@ -77,7 +78,7 @@ const columns: ColumnsType<Order> = [
     key: "action",
     render: (_, record) => (
       <div className="flex gap-2">
-        <EditButton userId={record.id} />
+        <OrderPopUp />
         <DeleteButton userId={record.id} />
       </div>
     ),
