@@ -22,7 +22,7 @@ export default function CustomInput({
         placeholder={placeholder}
         suffix={icon}  
         disabled={disabled}
-        className="flex-1 flex"
+        className="flex-1 flex focus:border-primary focus:ring-primary"
       />
     </div>
   );

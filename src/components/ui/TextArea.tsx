@@ -40,7 +40,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
           onChange={handleChange}
           placeholder={placeholder}
           rows={rows}
-          className="rounded-lg border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+          className="rounded-lg border-gray-300 focus:border-primary focus:ring-primary"
         />
         {onSubmit && (
           <Button type="primary" onClick={handleSubmit}>

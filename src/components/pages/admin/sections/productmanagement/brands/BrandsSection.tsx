@@ -1,10 +1,11 @@
-import { CheckIcon, FunnelIcon, PlusIcon, TrashIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { PlusIcon } from "@heroicons/react/24/outline";
 import { Button } from "../../../../../ui/button/Button";
 import { SearchBar } from "../../../../../ui/search/SearchInput";
 import { ReusableTable } from "../../../../../ui/table.tsx/Table";
-import EditButton from "../../../../../ui/table.tsx/Edit";
 import AvatarItem from "../../../../../ui/table.tsx/AvatarItem";
 import DeleteButton from "../../../../../ui/table.tsx/Delete";
+import type { ColumnsType } from "antd/es/table";
+import BrandPopUp from "./BrandPopUp";
 
 
   type Brand = {
@@ -13,12 +14,11 @@ import DeleteButton from "../../../../../ui/table.tsx/Delete";
   about: string;
 };
 
-
 const columns: ColumnsType<Brand> = [
   {
     title: "Name",
     key: "name",
-    render: (_, record) => (
+    render: (_, record:Brand) => (
       <AvatarItem avatarUrl={record.avatar} firstName={record.brand} />
     ),
       width: 150,
@@ -33,9 +33,9 @@ const columns: ColumnsType<Brand> = [
   {
     title: "Action",
     key: "action",
-    render: (_, record) => (
+    render: (_, record:any) => (
       <div className="flex gap-2">
-        <EditButton userId={record.id} />
+        <BrandPopUp isEdit={true} id={record.id} />
         <DeleteButton userId={record.id} />
       </div>
     ),
@@ -82,8 +82,8 @@ export default function BrandsSection(){
     return(
         <div className="flex flex-col gap-5">
                 <div className="flex gap-2 justify-end">
-                    <Button size="sm" isPill={true} icon={<PlusIcon />} label="Add New Brand"/>
-                    <SearchBar size="middle" pill={true} />
+                    <BrandPopUp isEdit={false}/>
+                    <SearchBar  size="middle" pill={true} />
                 </div>
             <ReusableTable<Brand>
                 columns={columns}

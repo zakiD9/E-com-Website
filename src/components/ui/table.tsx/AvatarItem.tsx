@@ -1,10 +1,9 @@
 type UserProps = {
   firstName:string;
-  lastName:string;
   avatarUrl?: string;
 };
 
-export default function AvatarItem({ firstName,lastName, avatarUrl }: UserProps) {
+export default function AvatarItem({ firstName, avatarUrl }: UserProps) {
     const initials = firstName
     .split(" ")
     .map((n) => n[0])
@@ -24,7 +23,7 @@ export default function AvatarItem({ firstName,lastName, avatarUrl }: UserProps)
           {initials}
         </div>
       )}
-      <span className="font-medium text-gray-800">{firstName} {lastName}</span>
+      <span className="font-medium text-gray-800">{firstName}</span>
     </div>
   );
 }

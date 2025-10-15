@@ -1,12 +1,12 @@
 import Sidebar from "../../components/pages/admin/layout/sidebar/SideBar";
-import ReviewsSection from "../../components/pages/admin/sections/reviews/ReviewsSection";
+import ProductManagementSection from "../../components/pages/admin/sections/productmanagement/ProductManagementSection";
 
 export default function AdminDashboard() {
 
   return (
     <div className="w-full flex">
       <Sidebar />
-      <ReviewsSection />
+      <ProductManagementSection />
     </div>
   );
 }
