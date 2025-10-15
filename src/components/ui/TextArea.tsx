@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Input, Button } from "antd";
 
 const { TextArea } = Input;
-
 interface CustomTextAreaProps {
   placeholder?: string;
   rows?: number;
   buttonText?: string;
   onSubmit?: (value: string) => void;
+  onChange?: (value: string) => void;
   className?: string;
-  label?: string; // <-- optional label
+  label?: string;
 }
 
 const CustomTextArea: React.FC<CustomTextAreaProps> = ({
@@ -17,6 +17,7 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
   rows = 4,
   buttonText = "Submit",
   onSubmit,
+  onChange,
   className = "",
   label,
 }) => {
@@ -24,6 +25,8 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
+
+    if (onChange) onChange(e.target.value);
   };
 
   const handleSubmit = () => {

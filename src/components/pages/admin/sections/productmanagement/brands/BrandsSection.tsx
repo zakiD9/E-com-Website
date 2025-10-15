@@ -6,6 +6,8 @@ import AvatarItem from "../../../../../ui/table.tsx/AvatarItem";
 import DeleteButton from "../../../../../ui/table.tsx/Delete";
 import type { ColumnsType } from "antd/es/table";
 import BrandPopUp from "./BrandPopUp";
+import { useBrandStore } from "../../../../../../store/brandsStore";
+import { useEffect, useState } from "react";
 
 
   type Brand = {
@@ -14,7 +16,11 @@ import BrandPopUp from "./BrandPopUp";
   about: string;
 };
 
-const columns: ColumnsType<Brand> = [
+export default function BrandsSection(){
+  const { fetchBrands, removeBrand, brands, loading ,selectedBrand } = useBrandStore();
+  const [search, setSearch] = useState("");
+
+  const columns: ColumnsType<Brand> = [
   {
     title: "Name",
     key: "name",
@@ -36,54 +42,39 @@ const columns: ColumnsType<Brand> = [
     render: (_, record:any) => (
       <div className="flex gap-2">
         <BrandPopUp isEdit={true} id={record.id} />
-        <DeleteButton userId={record.id} />
+        <DeleteButton id={selectedBrand?.id} onClick={() => removeBrand(record.id)} />
       </div>
     ),
     width:30
   },
 ];
 
-const brands: Brand[] = [
-  {
-    brand: "Nike",
-    avatar: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-    about: "Global sportswear brand known for athletic shoes, apparel, and equipment.",
-  },
-  {
-    brand: "Apple",
-    avatar: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-    about: "Innovative technology company creating iPhones, Macs, and other consumer electronics.",
-  },
-  {
-    brand: "Samsung",
-    avatar: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg",
-    about: "Leading global brand in electronics, smartphones, and home appliances.",
-  },
-  {
-    brand: "Adidas",
-    avatar: "https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg",
-    about: "German sportswear manufacturer producing shoes, clothing, and accessories.",
-  },
-  {
-    brand: "IKEA",
-    avatar: "https://upload.wikimedia.org/wikipedia/commons/4/48/Ikea_logo.svg",
-    about: "Swedish company that designs and sells ready-to-assemble furniture and home goods.",
-  },
-  {
-    brand: "Sony",
-    avatar: "https://upload.wikimedia.org/wikipedia/commons/2/20/Sony_Logo.svg",
-    about: "Japanese multinational corporation with products in gaming, electronics, and entertainment.",
-  },
-];
+  useEffect(() => {
+    fetchBrands();
+  }, []);
+
+const handleSearchChange = (value: string) => {
+  setSearch(value);
+  fetchBrands(1, 10, value);
+};
+
+const handleSearchSubmit = (value: string) => {
+  fetchBrands(1, 10, value);
+};
 
 
-export default function BrandsSection(){
 
     return(
         <div className="flex flex-col gap-5">
                 <div className="flex gap-2 justify-end">
                     <BrandPopUp isEdit={false}/>
-                    <SearchBar  size="middle" pill={true} />
+                    <SearchBar
+                      value={search}
+                      onChange={handleSearchChange}
+                      onSearch={handleSearchSubmit}
+                      size="middle"
+                     pill={true}
+                    />
                 </div>
             <ReusableTable<Brand>
                 columns={columns}

@@ -3,7 +3,7 @@ import { CheckOutlined } from "@ant-design/icons";
 
 interface CustomModalProps {
   visible: boolean;
-  title?: string;
+  title?: any;
   content?: React.ReactNode;
   onClose: () => void;
   onConfirm?: () => void;
@@ -29,7 +29,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
       footer={null}
       centered
       className={className}
-      bodyStyle={{ padding: "1rem" }}
+      styles={{ body: { padding: "1rem" } }}
     >
       <div className="flex flex-col gap-4">
         {title && <h2 className="text-3xl text-center pb-5 border-b font-semibold">{title}</h2>}
