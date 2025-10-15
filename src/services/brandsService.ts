@@ -6,35 +6,35 @@ export const addNewBrand = (name: string, about: string, image: File) => {
   formData.append("About", about);
   formData.append("Image", image);
 
-  return api.post("/auth/brands", formData, {
+  return api.post("/brands", formData, {
     headers: { "Content-Type": "multipart/form-data" }
   });
 };
 
 
 export const updateBrand = (id:number | string,name:string,about:string ) => {
-  return api.put(`/auth/brands/${id}`, { name,about });
+  return api.put(`/brands/${id}`, { name,about });
 };
 
 export const getAllBrands = (page: number, pageSize: number, q: string) => {
-  return api.get(`/auth/brands`, {
+  return api.get(`/brands`, {
     params: { page, pageSize, q }
   });
 };
 
 export const getBrandById = (id:number | string) => {
-  return api.get(`/auth/brands/${id}`);
+  return api.get(`/brands/${id}`);
 };
 
 export const deleteBrand = (id:number | string) => {
-  return api.delete(`/auth/brands/${id}`);
+  return api.delete(`/brands/${id}`);
 };
 
 export const updateBrandImage = (id: number | string, image: File) => {
   const formData = new FormData();
   formData.append("Image", image);
 
-  return api.patch(`/auth/brands/${id}/image`, formData, {
+  return api.patch(`/brands/${id}/image`, formData, {
     headers: { "Content-Type": "multipart/form-data" }
   });
 };

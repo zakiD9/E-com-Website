@@ -60,6 +60,7 @@ export const useBrandStore = create<BrandStoreState>((set, get) => ({
     set({ loading: true, error: null });
     try {
       await addNewBrand(name, about, image);
+      console.log("brand added successfully")
       await get().fetchBrands();
       set({ loading: false });
     } catch (err: any) {

@@ -9,7 +9,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import { useBrandStore } from "../../../../../../store/brandsStore";
 
 interface brandProps{
-  id:number;
+  id?:number;
   isEdit:boolean;
 }
 
