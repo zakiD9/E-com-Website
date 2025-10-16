@@ -1,6 +1,6 @@
 import React from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "default";
+export type ButtonVariant = "primary" | "secondary" | "default" | "text";
 
 export interface ButtonProps {
   label: string;

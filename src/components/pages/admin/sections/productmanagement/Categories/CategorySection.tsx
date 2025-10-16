@@ -1,5 +1,5 @@
-import NewCategoryPopUp from "./AddNewCategoryPopUp";
-import CategoryCard from "./CategoryCard";
+import NewCategoryPopUp from "./categorypopup/AddNewCategoryPopUp";
+import CategoryPopUp from "./categorypopup/CategoryPopUp";
 
 const categories = [
   {
@@ -42,7 +42,7 @@ export default function CategorySection(){
     return(
         <div className="grid grid-cols-4 grid-rows-3 w-full h-screen gap-4 p-10">
             {categories.map((category)=>(
-                <CategoryCard key={category.categoryName} {...category} />
+                <CategoryPopUp key={category.categoryName} {...category} />
             ))
             }
             <NewCategoryPopUp />

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import CustomModal from "../../../../../ui/Modal";
-import CustomInput from "../../../../../ui/Input/Input";
-import { TextButton } from "../../../../../ui/button/TextButton";
-import CustomTextArea from "../../../../../ui/TextArea";
+import CustomModal from "../../../../../../ui/Modal";
+import CustomInput from "../../../../../../ui/Input/Input";
+import { TextButton } from "../../../../../../ui/button/TextButton";
+import CustomTextArea from "../../../../../../ui/TextArea";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
 

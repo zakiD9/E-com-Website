@@ -14,6 +14,11 @@ const variantStyles = {
     hover: "hover:bg-gray-100",
     disabled: "bg-gray-100 border-gray-100 text-gray-300 cursor-not-allowed",
   },
+  text: {
+    base: "bg-transparent border-none",
+    hover: "hover:opacity-70",
+    disabled: "opacity-50 cursor-not-allowed",
+  },
 };
 
 export default variantStyles;

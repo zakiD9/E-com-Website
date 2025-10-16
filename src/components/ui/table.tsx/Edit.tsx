@@ -1,20 +1,20 @@
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 
 type EditButtonProps = {
-  id: number;
-  onClick?: (id: number) => void;
+  onClick?: () => void;
+  size?: "sm" | "md";
 };
 
-export default function EditButton({
-  id = 1,
-  onClick,
-}: EditButtonProps) {
+export default function EditButton({ onClick, size = "md" }: EditButtonProps) {
+  const sizeClasses = size === "sm" ? "p-1" : "p-2";
+  const iconSize = size === "sm" ? "h-4 w-4" : "h-5 w-5";
+
   return (
     <button
-      className="p-1 duration-150 active:scale-110 hover:text-gray-800 transition"
-      onClick={() => onClick?.(id)}
+      onClick={onClick}
+      className={`${sizeClasses} duration-150 active:scale-110 hover:text-gray-800 transition`}
     >
-      <PencilSquareIcon className="h-5 w-5" />
+      <PencilSquareIcon className={iconSize} />
     </button>
   );
 }
