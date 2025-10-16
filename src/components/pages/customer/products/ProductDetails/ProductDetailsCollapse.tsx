@@ -1,10 +1,15 @@
 import React from "react";
-import { Collapse, Rate } from "antd";
+import { Collapse } from "antd";
 import type { CollapseProps } from "antd";
-import { CheckCircleOutlined } from "@ant-design/icons";
 import ReviewsSection from "../Reviews/ReviewsSection";
+import { QnASection } from "./QndACollapse";
 
-const { Panel } = Collapse;
+
+const qnaList = [
+  { id: 1, question: "What is this product?", answer: "aw wchniya" },
+  { id: 2, question: "How to use it?", answer: "ezharha" }
+];
+
 
 const ProductDetailsCollapse: React.FC = () => {
   const items: CollapseProps["items"] = [
@@ -28,7 +33,7 @@ const ProductDetailsCollapse: React.FC = () => {
     {
       key: "4",
       label: "Questions & Answers",
-      children: <p>Q&A section here...</p>,
+      children: <QnASection qnaList={qnaList} />,
     },
     {
       key: "5",

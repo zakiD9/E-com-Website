@@ -13,6 +13,7 @@ const pictures = [
 
 export default function ProductDetailsSection(){
 
+
     return(
         <div className="flex flex-col justify-start gap-2 w-2/6">
             <h1 className="text-lg font-semibold mb-3">Product Details</h1>
