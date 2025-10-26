@@ -28,7 +28,7 @@ export const TextButton: React.FC<TextButtonProps> = ({
 }) => {
   const baseStyles = `
     inline-flex items-center justify-center font-medium 
-    text-blue-600 hover:text-blue-800 
+    text-primary hover:text-blue-800 
     disabled:text-gray-400 disabled:cursor-not-allowed
     transition-colors duration-200
     ${sizeStyles[size]}

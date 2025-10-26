@@ -5,6 +5,7 @@ import { ReusableTable } from "../../../../../ui/table.tsx/Table";
 import EditButton from "../../../../../ui/table.tsx/Edit";
 import Status from "../../../../../ui/table.tsx/Status";
 import DeleteButton from "../../../../../ui/table.tsx/Delete";
+import { useNavigate } from "react-router-dom";
 
 
   type Product = {
@@ -16,55 +17,6 @@ import DeleteButton from "../../../../../ui/table.tsx/Delete";
 };
 
 
-const columns: ColumnsType<Product> = [
-  {
-    title: "ID",
-    dataIndex: "id",
-    key: "id",
-      width: 30,
-
-  },
-  {
-    title: "Name",
-    key: "name",
-    render: (_, record) => (
-      <span>{record.firstName}</span>
-    ),
-      width: 350,
-
-  },
-  {
-    title: "Brand",
-    dataIndex: "brand",
-    key: "brand",
-    width: 150,
-
-  },
-  {
-    title: "Category",
-    dataIndex: "category",
-    key: "category",
-    width: 100,
-  },
-  {
-    title: "Status",
-    dataIndex: "status",
-    key: "status",
-    render: (status: Product["status"]) => <Status status={status} />,
-    width:50,
-  },
-  {
-    title: "Action",
-    key: "action",
-    render: (_, record) => (
-      <div className="flex gap-2">
-        <EditButton userId={record.id} />
-        <DeleteButton userId={record.id} />
-      </div>
-    ),
-    width:30
-  },
-];
 
 
 const data: Product[] = [
@@ -106,6 +58,57 @@ const data: Product[] = [
 ];
 
 export default function AllProductSection(){
+  const navigate = useNavigate();
+  const columns: ColumnsType<Product> = [
+  {
+    title: "ID",
+    dataIndex: "id",
+    key: "id",
+      width: 30,
+
+  },
+  {
+    title: "Name",
+    key: "name",
+    render: (_, record) => (
+      <span>{record.firstName}</span>
+    ),
+      width: 350,
+
+  },
+  {
+    title: "Brand",
+    dataIndex: "brand",
+    key: "brand",
+    width: 150,
+
+  },
+  {
+    title: "Category",
+    dataIndex: "category",
+    key: "category",
+    width: 100,
+  },
+  {
+    title: "Status",
+    dataIndex: "status",
+    key: "status",
+    render: (status: Product["status"]) => <Status status={status} />,
+    width:50,
+  },
+  {
+    title: "Action",
+    key: "action",
+    render: (_, record) => (
+      <div className="flex gap-2">
+        <EditButton onClick={()=>{navigate("/admin/product-management/add")}} />
+        <DeleteButton />
+      </div>
+    ),
+    width:30
+  },
+];
+
 
     return(
         <div className="flex flex-col gap-5">
@@ -116,7 +119,7 @@ export default function AllProductSection(){
                     <Button size="sm" isPill={true} icon={<TrashIcon />} label="Delete"/>
                 </div>
                 <div className="flex gap-2">
-                    <Button size="sm" isPill={true} icon={<PlusIcon />} label="Add New Product"/>
+                    <Button onClick={()=>{navigate("/admin/product-management/add")}} size="sm" isPill={true} icon={<PlusIcon />} label="Add New Product"/>
                     <Button size="sm" isPill={true} icon={<FunnelIcon />} label="Filter"/>
                     <SearchBar size="middle" pill={true} />
                 </div>

@@ -2,13 +2,25 @@ import React from "react";
 import { Collapse } from "antd";
 import type { CollapseProps } from "antd";
 import ReviewsSection from "../Reviews/ReviewsSection";
-import { QnASection } from "./QndACollapse";
+import QndACollapse from "../../../../ui/ReusableCollapse";
 
 
-const qnaList = [
-  { id: 1, question: "What is this product?", answer: "aw wchniya" },
-  { id: 2, question: "How to use it?", answer: "ezharha" }
-];
+const qna = [
+    {
+      key: "1",
+      title: "Lorem",
+      content: <p>This is content 1</p>,
+      onEdit: () => console.log("Edit 1"),
+      onDelete: () => console.log("Delete 1"),
+    },
+    {
+      key: "2",
+      title: "Lorem",
+      content: <p>This is content 2</p>,
+      onEdit: () => console.log("Edit 2"),
+      onDelete: () => console.log("Delete 2"),
+    },
+  ];
 
 
 const ProductDetailsCollapse: React.FC = () => {
@@ -33,7 +45,7 @@ const ProductDetailsCollapse: React.FC = () => {
     {
       key: "4",
       label: "Questions & Answers",
-      children: <QnASection qnaList={qnaList} />,
+      children: <QndACollapse items={qna} />,
     },
     {
       key: "5",

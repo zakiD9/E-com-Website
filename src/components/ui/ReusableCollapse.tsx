@@ -16,9 +16,10 @@ interface ReusableCollapseProps {
     onEdit?: () => void;
     onDelete?: () => void;
   }[];
+  IsAdmin?:boolean;
 }
 
-export default function QndACollapse({ items }: ReusableCollapseProps) {
+export default function QndACollapse({ items, IsAdmin=false }: ReusableCollapseProps) {
   return (
     <Collapse
       bordered={false}
@@ -36,13 +37,14 @@ export default function QndACollapse({ items }: ReusableCollapseProps) {
             <div className="flex justify-between items-center w-full">
               <span>{title}</span>
               <Space>
-                {onEdit && (
+                {IsAdmin && <>{onEdit && (
                   <QndAPopUp />
                 )}
                 {onDelete && (
-                  <DeleteButton userId={1}
+                  <DeleteButton 
                   />
                 )}
+                </>}
               </Space>
             </div>
           }

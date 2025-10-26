@@ -8,7 +8,7 @@ export default function AddNewVariantPopUp(){
     const [isOpen, setIsOpen] = useState(false);
     return(
         <div>
-            <EditButton onClick={()=>{setIsOpen(true)}} userId={1}/>
+            <EditButton onClick={()=>{setIsOpen(true)}}/>
       <CustomModal
         visible={isOpen}
         className="w-1/3"

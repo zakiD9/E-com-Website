@@ -1,14 +1,14 @@
 import { useState } from "react"
-import DeleteButton from "../../../../../../ui/table.tsx/Delete";
-import EditButton from "../../../../../../ui/table.tsx/Edit";
-import { CheckBadgeIcon, CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import DeleteButton from "../../../../../../../ui/table.tsx/Delete";
+import EditButton from "../../../../../../../ui/table.tsx/Edit";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface sectionProps{
     name: string;
     id: number;
 }
 
-export default function Section({ name, id }: sectionProps) {
+export default function SectionCard({ name, id }: sectionProps) {
     const [isEditing, setIsEditing] = useState(false);
     const [tempName, setTempName] = useState(name);
 

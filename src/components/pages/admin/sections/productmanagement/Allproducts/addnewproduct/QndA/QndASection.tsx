@@ -28,7 +28,7 @@ export default function QndASection(){
         <div className="flex justify-start">
         <Button size="sm" isPill={true} icon={<PlusIcon />} label="Add Q&A"/>
         </div>
-        <QndACollapse items={items} />
+        <QndACollapse items={items} IsAdmin={true} />
         </div>
     )
 }

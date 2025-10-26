@@ -37,13 +37,13 @@ const CustomTextArea: React.FC<CustomTextAreaProps> = ({
   return (
     <div className={`flex flex-col flex-1 gap-2 w-full max-w-md mx-auto ${className}`}>
       {label && <span className="font-medium text-sm text-gray-700">{label}</span>}
-      <div className="flex gap-3">
+      <div className="flex w-full gap-3">
         <TextArea
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
           rows={rows}
-          className="rounded-lg border-gray-300 focus:border-primary focus:ring-primary"
+          className="rounded-lg w-full border-gray-300 focus:border-primary focus:ring-primary"
         />
         {onSubmit && (
           <Button type="primary" onClick={handleSubmit}>

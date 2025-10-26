@@ -14,7 +14,6 @@ export default function Variant(props:variantProps){
            <p className="text-sm m-0 leading-none">{props.name}</p>
 
           <button
-            onClick={() => onRemove(props.id)}
             className="absolute -top-1 -right-1 hidden group-hover:flex items-center justify-center bg-white  rounded-full w-4 h-4 text-xs"
           >
             ✕

@@ -7,6 +7,6 @@ export default interface CustomInputProps {
   placeholder?: string;
   type?: "text" | "password";
   size?: "small" | "middle" | "large";
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }

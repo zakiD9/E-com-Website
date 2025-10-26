@@ -13,6 +13,10 @@ import ResetPassword from './pages/customer/authentication/Resetpassword';
 import NotFound from './pages/Notfound';
 import AdminLogin from './pages/admin/Login';
 import AdminDashboard from './pages/admin/Dashboard';
+import ProductManagementSection from './components/pages/admin/sections/productmanagement/ProductManagementSection';
+import OrdersSection from './components/pages/admin/sections/orders/OrdersSection';
+import ReviewsSection from './components/pages/admin/sections/reviews/ReviewsSection';
+import AddNewProductSection from './components/pages/admin/sections/productmanagement/Allproducts/addnewproduct/AddNewProductSection';
 
 
 function App() {
@@ -26,7 +30,15 @@ function App() {
           <Route path="/Signup" element={<Signup />} /> 
           <Route path="/Login" element={<Login />} /> 
           <Route path="/AdminLogin" element={<AdminLogin />} /> 
-          <Route path="/Admin" element={<AdminDashboard />} /> 
+            <Route path="/admin" element={<AdminDashboard />}>
+              <Route path="dashboard" element={<div>dashboard</div>} />
+              <Route path="product-management" element={<ProductManagementSection />} />
+              <Route path="orders" element={<OrdersSection />} />
+              <Route path="reviews" element={<ReviewsSection />} />
+              <Route path="customers" element={<div>customers</div>} />
+              <Route path="settings" element={<div>settings</div>} />
+              <Route path="product-management/add" element={<AddNewProductSection />} />
+            </Route>
           <Route path="/Profile" element={<Profile />} /> 
           <Route path="/EmailConfirmation" element={<EmailConfirmation />} /> 
           <Route path="/ForgetPassword" element={<ForgetPassword />} /> 
